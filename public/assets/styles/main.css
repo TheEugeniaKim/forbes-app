@@ -1,0 +1,107 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 100%; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  color: #3b3b3b; }
+
+h1, h2, h3, h4, h5 {
+  margin: 6px;
+  padding: 0; }
+
+header {
+  grid-column: 1 / -1;
+  background-size: cover;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center; }
+  header h1 {
+    font-size: 3.5em;
+    text-shadow: -2px -2px 3px #a3a2a2; }
+
+footer {
+  height: 50px;
+  display: flex-end;
+  justify-content: center;
+  grid-column: 2 / 3;
+  grid-row: 3 / 4; }
+
+.wrapper {
+  background-color: #FCFCFC;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  line-height: 23px; }
+  .wrapper main {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    /* modal popup styles */ }
+    .wrapper main .forbes-logo {
+      height: 30px; }
+    .wrapper main .img {
+      max-width: 230px;
+      max-height: 95px;
+      width: auto;
+      height: auto;
+      padding: 1rem;
+      z-index: 2; }
+    .wrapper main .modal {
+      position: fixed;
+      overflow: auto;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      animation: 500ms fadeIn;
+      display: none;
+      z-index: 51; }
+      .wrapper main .modal-backdrop {
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+        margin-top: 30px;
+        position: relative;
+        z-index: 50; }
+      .wrapper main .modal-content {
+        justify-content: center;
+        padding: 5%; }
+      .wrapper main .modal img {
+        width: auto;
+        max-height: calc(100vh - 150px);
+        margin-bottom: auto;
+        margin: 0 auto;
+        display: inline-block;
+        cursor: pointer; }
+      .wrapper main .modal span {
+        position: absolute;
+        top: 10;
+        right: 10px;
+        font-size: 4rem;
+        color: red;
+        cursor: pointer; }
+      .wrapper main .modal p {
+        margin: 5px auto;
+        font-size: 1.1rem;
+        text-align: center; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
