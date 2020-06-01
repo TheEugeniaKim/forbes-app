@@ -1,7 +1,6 @@
 # Welcome to a Forbes Photo Gallery Display! 
 
-![Image of Forbes Photo Gallery]
-(public/assets/images/demo.png)
+![Image of Forbes Photo Gallery](public/assets/images/demo.png)
 
 ## About 
 This single page application features photos from Unsplash API. Simply type in a key word of some images you'd like to browse in the search bar. Toggle through various images and click the thumbnails to enlarge the image. 
