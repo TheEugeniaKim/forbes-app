@@ -2,34 +2,53 @@
 
 .pagination-container {
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
 
   .pagination {
     margin-top: 10rem;
     display: none;
+    grid-column: 2 / 3;
 
-    .page .back-btn .next-btn {
-      margin: 15%;
+    .back-btn, 
+    .page,
+    .next-btn {
+      margin: 3%;
+      display: inline-block;
     }
-  
-    .page {
-      font-family: 'Work Sans', Helvetica, Arial, sans-serif;
-      font-weight: normal;
-      display: inline;
-    }
-  
-    .back-btn .next-btn {
+
+    button {
+      background-color: $merlot-burgandy;
+      font-weight: bolder;
+      color: $gray-divider;
       text-transform: uppercase;
       text-decoration: none;
-      padding: 1.5rem 4rem;
+      padding: 1rem 1.5rem;
       display: inline-block;
       border-radius: 10rem;
       transition: all .2s;
       position: relative;
+      border: none;
       animation: hover 500ms;
+      z-index: 1;
       cursor: pointer;
+    
+      &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 1rem 2rem rgba($black,.2);
+          background-color: $merlot-burgandy--light;
+        &::after {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0;
+        }
+      }
+    
+    }
+    .page {
+      font-family: 'Work Sans', Helvetica, Arial, sans-serif;
+      font-weight: normal;
+      display: inline;
     }
   }
 }

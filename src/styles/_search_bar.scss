@@ -27,5 +27,31 @@
       font-weight: 'bold';
       color: $gray-divider;
     }
+    button {
+      background-color: $merlot-burgandy;
+      border: none;
+      font-weight: bolder;
+      color: $gray-divider;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: .5rem 1rem;
+      display: inline-block;
+      border-radius: 10rem;
+      transition: all .2s;
+      position: relative;
+      animation: hover 500ms;
+      z-index: 1;
+      cursor: pointer;
+    
+      &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 1rem 2rem rgba($black,.2);
+          background-color: $merlot-burgandy--light;
+        &::after {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0;
+        }
+      }
+    }
   }
 }

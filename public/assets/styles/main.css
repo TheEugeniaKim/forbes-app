@@ -18,18 +18,6 @@ h1, h2, h3, h4, h5 {
   margin: 6px;
   padding: 0; }
 
-header {
-  grid-column: 1 / -1;
-  background-size: cover;
-  margin-bottom: 20px;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-align: center; }
-  header h1 {
-    font-size: 3.5em;
-    text-shadow: -2px -2px 3px #a3a2a2; }
-
 footer {
   position: relative;
   height: 50px;
@@ -113,6 +101,28 @@ footer {
       font-family: "Merriweather";
       font-weight: 'bold';
       color: #E2E2E2; }
+    .search-bar form button {
+      background-color: #660434;
+      border: none;
+      font-weight: bolder;
+      color: #E2E2E2;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: .5rem 1rem;
+      display: inline-block;
+      border-radius: 10rem;
+      transition: all .2s;
+      position: relative;
+      animation: hover 500ms;
+      z-index: 1;
+      cursor: pointer; }
+      .search-bar form button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(24, 23, 22, 0.2);
+        background-color: #D0A7BB; }
+        .search-bar form button:hover::after {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0; }
 
 .wrapper {
   background-color: #FCFCFC;
@@ -149,26 +159,42 @@ footer {
 
 .pagination-container {
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center; }
   .pagination-container .pagination {
     margin-top: 10rem;
-    display: none; }
-    .pagination-container .pagination .page .back-btn .next-btn {
-      margin: 15%; }
-    .pagination-container .pagination .page {
-      font-family: 'Work Sans', Helvetica, Arial, sans-serif;
-      font-weight: normal;
-      display: inline; }
-    .pagination-container .pagination .back-btn .next-btn {
+    display: none;
+    grid-column: 2 / 3; }
+    .pagination-container .pagination .back-btn,
+    .pagination-container .pagination .page,
+    .pagination-container .pagination .next-btn {
+      margin: 3%;
+      display: inline-block; }
+    .pagination-container .pagination button {
+      background-color: #660434;
+      font-weight: bolder;
+      color: #E2E2E2;
       text-transform: uppercase;
       text-decoration: none;
-      padding: 1.5rem 4rem;
+      padding: 1rem 1.5rem;
       display: inline-block;
       border-radius: 10rem;
       transition: all .2s;
       position: relative;
+      border: none;
       animation: hover 500ms;
+      z-index: 1;
       cursor: pointer; }
+      .pagination-container .pagination button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(24, 23, 22, 0.2);
+        background-color: #D0A7BB; }
+        .pagination-container .pagination button:hover::after {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0; }
+    .pagination-container .pagination .page {
+      font-family: 'Work Sans', Helvetica, Arial, sans-serif;
+      font-weight: normal;
+      display: inline; }
 
