@@ -48,7 +48,6 @@ let searchPhotos = (searchTerm) => {
   return fetch(url)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       images = data 
       displayPhotos(data)
   })
@@ -73,7 +72,7 @@ let displayPhotos = (data) => {
     imgElement.alt = img.alt_description
     imgElement.className="img"
     imgElement.id=index
-    imgElement.addEventListener('click', () => displayModal(img, index))
+    imgElement.addEventListener('click', () => displayModal(img))
     imgContainer.appendChild(imgElement)
   })
 
@@ -84,14 +83,13 @@ let findModalElement = (element) => {
   return document.querySelector(`.modal ${element}`)
 }
 
-let displayModal = (img, index) => {
+let displayModal = (img) => {
   modalNode.style.display = 'block'
   findModalElement('img').src = img.urls.regular
   findModalElement('p').innerHTML = img.description
 }
 
 findModalElement('span').addEventListener('click', () => {
-  console.log('clicking')
   document.querySelector('body').style.overflow = 'auto'  
   modalNode.style.display = 'none'
 })
