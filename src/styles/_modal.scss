@@ -1,0 +1,61 @@
+.modal {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  animation: 500ms fadeIn;
+  display: none;
+  z-index: 51;
+
+  &-content {
+    justify-content: center;
+    display: grid;
+  }
+
+  &-backdrop {
+    max-width: 1500px;
+    margin: auto;
+    margin-top: 30px;
+    position: relative;
+    z-index: 50;
+    display: grid;
+  }
+
+  &-img {
+    max-height: 700px;  
+    max-width: 800px;
+    justify-self: center;
+  }
+
+  &-span {
+    position: absolute;
+    top: 10;
+    right: 10px;
+    font-size: 4rem;
+    color: red;
+    cursor: pointer;
+  }
+
+  &-description {
+    justify-self: center;
+  }
+    
+  @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+  }
+  
+  @media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+  }
+}

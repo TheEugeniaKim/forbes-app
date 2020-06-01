@@ -1,0 +1,35 @@
+@import '_variables.scss';
+
+.pagination-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+
+  .pagination {
+    margin-top: 10rem;
+    display: none;
+
+    .page .back-btn .next-btn {
+      margin: 15%;
+    }
+  
+    .page {
+      font-family: 'Work Sans', Helvetica, Arial, sans-serif;
+      font-weight: normal;
+      display: inline;
+    }
+  
+    .back-btn .next-btn {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      display: inline-block;
+      border-radius: 10rem;
+      transition: all .2s;
+      position: relative;
+      animation: hover 500ms;
+      cursor: pointer;
+    }
+  }
+}

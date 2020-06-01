@@ -11,7 +11,7 @@ body {
   padding: 0;
   height: 100%;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: -apple-system, BlinkMacSystemFont, 'Georgia', Cambria, 'Times New Roman', Times, serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   color: #3b3b3b; }
 
 h1, h2, h3, h4, h5 {
@@ -22,7 +22,6 @@ header {
   grid-column: 1 / -1;
   background-size: cover;
   margin-bottom: 20px;
-  display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
@@ -32,76 +31,144 @@ header {
     text-shadow: -2px -2px 3px #a3a2a2; }
 
 footer {
+  position: relative;
   height: 50px;
-  display: flex-end;
-  justify-content: center;
-  grid-column: 2 / 3;
+  grid-column: 3 / 2;
   grid-row: 3 / 4; }
+  footer p {
+    font-family: 'Work Sans';
+    font-weight: 600;
+    text-align: center; }
+  footer a {
+    animation: hover  500ms; }
+    footer a:hover {
+      color: #00808A; }
 
-.wrapper {
-  background-color: #FCFCFC;
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
-  grid-template-rows: auto 1fr auto;
-  line-height: 23px; }
-  .wrapper main {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    /* modal popup styles */ }
-    .wrapper main .forbes-logo {
-      height: 30px; }
-    .wrapper main .img {
-      max-width: 230px;
-      max-height: 95px;
-      width: auto;
-      height: auto;
-      padding: 1rem;
-      z-index: 2; }
-    .wrapper main .modal {
-      position: fixed;
-      overflow: auto;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      background: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      animation: 500ms fadeIn;
-      display: none;
-      z-index: 51; }
-      .wrapper main .modal-backdrop {
-        align-items: center;
-        max-width: 1200px;
-        margin: auto;
-        margin-top: 30px;
-        position: relative;
-        z-index: 50; }
-      .wrapper main .modal-content {
-        justify-content: center;
-        padding: 5%; }
-      .wrapper main .modal img {
-        width: auto;
-        max-height: calc(100vh - 150px);
-        margin-bottom: auto;
-        margin: 0 auto;
-        display: inline-block;
-        cursor: pointer; }
-      .wrapper main .modal span {
-        position: absolute;
-        top: 10;
-        right: 10px;
-        font-size: 4rem;
-        color: red;
-        cursor: pointer; }
-      .wrapper main .modal p {
-        margin: 5px auto;
-        font-size: 1.1rem;
-        text-align: center; }
+.modal {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  animation: 500ms fadeIn;
+  display: none;
+  z-index: 51; }
+  .modal-content {
+    justify-content: center;
+    display: grid; }
+  .modal-backdrop {
+    max-width: 1500px;
+    margin: auto;
+    margin-top: 30px;
+    position: relative;
+    z-index: 50;
+    display: grid; }
+  .modal-img {
+    max-height: 700px;
+    max-width: 800px;
+    justify-self: center; }
+  .modal-span {
+    position: absolute;
+    top: 10;
+    right: 10px;
+    font-size: 4rem;
+    color: red;
+    cursor: pointer; }
+  .modal-description {
+    justify-self: center; }
 
 @keyframes fadeIn {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
+  @media only screen and (max-width: 700px) {
+    .modal .modal-content {
+      width: 100%; } }
+
+.search-bar {
+  position: fixed;
+  grid: 1 / 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #181716;
+  justify-content: center;
+  align-items: center; }
+  .search-bar .forbes-logo {
+    height: 90%;
+    width: 40%;
+    padding: 1rem;
+    margin-left: 1rem; }
+  .search-bar h1 {
+    font-family: "Merriweather";
+    font-weight: 'bold';
+    color: #E2E2E2;
+    padding: 1rem; }
+  .search-bar form {
+    margin-right: 1rem; }
+    .search-bar form label {
+      font-family: "Merriweather";
+      font-weight: 'bold';
+      color: #E2E2E2; }
+
+.wrapper {
+  background-color: #FCFCFC;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-rows: 1fr 8fr 1fr;
+  line-height: 23px; }
+  .wrapper main {
+    grid-column: 3 / 2;
+    grid-row: 3 / 2;
+    grid-column-gap: auto;
+    grid-row-gap: auto; }
+    .wrapper main .img-container {
+      margin-top: 5%;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: minmax(120px, auto);
+      grid-gap: auto;
+      justify-items: center; }
+      .wrapper main .img-container .img {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        object-fit: cover;
+        justify-self: center;
+        animation: hover 500ms;
+        margin: 5%; }
+        .wrapper main .img-container .img:hover {
+          outline: 1.5rem solid #0066B2;
+          transform: scale(1.05) translateY(-0.5rem);
+          box-shadow: 0 2.5rem 4rem rgba(24, 23, 22, 0.5);
+          z-index: 20; }
+
+.pagination-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center; }
+  .pagination-container .pagination {
+    margin-top: 10rem;
+    display: none; }
+    .pagination-container .pagination .page .back-btn .next-btn {
+      margin: 15%; }
+    .pagination-container .pagination .page {
+      font-family: 'Work Sans', Helvetica, Arial, sans-serif;
+      font-weight: normal;
+      display: inline; }
+    .pagination-container .pagination .back-btn .next-btn {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      display: inline-block;
+      border-radius: 10rem;
+      transition: all .2s;
+      position: relative;
+      animation: hover 500ms;
+      cursor: pointer; }
 

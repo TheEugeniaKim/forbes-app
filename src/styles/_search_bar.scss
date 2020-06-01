@@ -1,0 +1,31 @@
+@import '_variables';
+
+.search-bar {
+  position: fixed;
+  grid: 1 / 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: $black;
+  justify-content: center;
+  align-items: center;
+  .forbes-logo {
+    height: 90%;
+    width: 40%;
+    padding: 1rem;
+    margin-left: 1rem;
+  }
+  h1 {
+    font-family: "Merriweather";
+    font-weight: 'bold';
+    color: $gray-divider;
+    padding: 1rem;
+  }
+  form {
+    margin-right: 1rem;
+    label {
+      font-family: "Merriweather";
+      font-weight: 'bold';
+      color: $gray-divider;
+    }
+  }
+}

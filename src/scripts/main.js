@@ -8,22 +8,20 @@ const allImgs = document.querySelectorAll('.img')
 const nextBtn = document.querySelector('.next-btn')
 const backBtn = document.querySelector('.back-btn')
 const page = document.querySelector('.page')
+const pagination = document.querySelector('.pagination')
+const pageContainer = document.querySelector('.pagination-container')
 const modalNode = document.querySelector('.modal')
+const logo = document.querySelector('.forbes-logo')
 const modal = modalNode.childNodes
 let searchTerm
 let pageNum = 1
 let images = []
 
-// import utils
-// import { searchPhotos } from './utils'
-
-
 // Add Event Listeners 
 form.addEventListener('submit', () => submitForm(event))
 nextBtn.addEventListener('click', () => nextTenPhotos(event))
 backBtn.addEventListener('click', () => backTenPhotos(event))
-
-
+logo.addEventListener('click', () => {location.reload()})
 
 //Functions
 let submitForm = (event) => {
@@ -63,6 +61,8 @@ let displayPhotos = (data) => {
   } 
   // update page number
   if (data.results.length > 0){
+    pagination.style.display = 'inline-block';
+
     page.innerHTML = ""
     page.insertAdjacentText('afterbegin', `Page: ${pageNum}`)
   } 
@@ -76,6 +76,7 @@ let displayPhotos = (data) => {
     imgElement.addEventListener('click', () => displayModal(img, index))
     imgContainer.appendChild(imgElement)
   })
+
 }
 
 //helper function - get modal element
@@ -83,36 +84,15 @@ let findModalElement = (element) => {
   return document.querySelector(`.modal ${element}`)
 }
 
- let displayModal = (img, index) => {
-  // console.log('displaying modal', img, index)
-  // console.log(modalNode('img'))
-  // console.log(img.links.regular)
-  //  modal.style.display = 'block'
-  //  modal.className = 'show'
-  //  modal.style.display = 'block'
-  // console.log("modal child", modalImg.src)
-  // modalImg.src = img.urls.regular
-  console.log(img)
-  console.log(modalNode)
+let displayModal = (img, index) => {
   modalNode.style.display = 'block'
-    findModalElement('img').src = img.urls.regular
-    findModalElement('p').innerHTML = img.description
-//     findModalElement('span').addEventListener('click', (event) => {
-//     document.querySelector('body').style.overflow = 'hidden'
-//     modalNode.style.display = 'hidden'
-//     event.stopPropagation()
-//   })
+  findModalElement('img').src = img.urls.regular
+  findModalElement('p').innerHTML = img.description
 }
 
 findModalElement('span').addEventListener('click', () => {
   console.log('clicking')
   document.querySelector('body').style.overflow = 'auto'  
   modalNode.style.display = 'none'
-  
 })
-// document.addEventListener('click', () => {
-//   console.log("CLICKING")
-//   document.querySelector('body').style.overflow = "auto"
-//   modalNode.style.display = "none"
-// })
 

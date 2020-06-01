@@ -1,0 +1,45 @@
+@import '_variables.scss';
+
+.wrapper {
+  background-color: $gray-page-bg;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-rows: 1fr 8fr 1fr;
+  line-height: 23px;
+  main {
+    grid-column: 3 / 2;
+    grid-row: 3 / 2;
+    grid-column-gap: auto;
+    grid-row-gap: auto;
+     
+    .img-container {
+      margin-top: 5%;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: minmax(120px, auto); 
+      grid-gap: auto;
+      justify-items: center;
+      
+      .img {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        object-fit: cover;
+        justify-self: center;
+        animation: hover 500ms; 
+        margin: 5%;
+
+        &:hover {
+          outline: 1.5rem solid $diamondring-blue;
+          transform: scale(1.05) translateY(-.5rem);
+          box-shadow: 0 2.5rem 4rem rgba($black, .5);
+          z-index: 20;
+        }
+      }
+
+    }
+      
+  }
+  
+}

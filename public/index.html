@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forbes Interview Exercise</title>
-<link rel="stylesheet" href="./assets/styles/main.css">
-<link rel="icon" type="image/jpg" href="assets/images/forbes-favicon.jpg"
-</head>
-<body>
-  <div class="wrapper">
-   
-    <main>
-      <h1>Forbes Photo Galery</h1>
-     
-      <img class="forbes-logo" src="./assets/images/forbes.png" alt="loading">
-      <br/>
-      <!-- <svg class="fs-icon fs-icon--search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><circle fill="none" stroke="#000" stroke-width="2" cx="8.5" cy="9" r="6"></circle><path transform="rotate(45.001 14.922 15.421)" d="M12 14.4h5.9v2H12z"></path></svg> -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forbes Interview Exercise</title>
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="icon" type="image/jpg" href="assets/images/forbes-favicon.jpg">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      
       <div class="search-bar">
+        <img class="forbes-logo" src="./assets/images/forbes-logo.png" alt="loading"> 
+        <h1> Photo Galery</h1> 
         <form>
+          <!-- <svg class="fs-icon fs-icon--search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><circle fill="none" stroke="#000" stroke-width="2" cx="8.5" cy="9" r="6"></circle><path transform="rotate(45.001 14.922 15.421)" d="M12 14.4h5.9v2H12z"></path></svg> -->
           <label>Search Images:</label>
           <input class="seachBox" type="text" id="search">
           <button type="submit" >Search</button>
-        </form>
-        <br/>
+        </form> 
+      </div>
 
-        <div>
+      <main> 
 
+          <div class="img-container"></div>
+
+          <div class="pagination-container">
+            <div class="pagination">
+              <button class="back-btn">Back</button>
+              <div class="page"></div>
+              <button class="next-btn">Next</button>
+            </div>
+          </div>
+      
+        <div class="modal">
+          <div class="modal-backdrop"></div>
+          <div class="modal-content">
+            <span class="modal-span">&times;</span>
+            <img class="modal-img" src="" alt="Image Modal">
+            <p class="modal-description" ></p>
+          </div>
         </div>
-      </div>
-    
-      <div class="img-container"></div>
+      </main>
 
-      <div class="pagination">
-        <button class="back-btn">Back</button>
-        <div class="page"></div>
-        <button class="next-btn">Next</button>
-      </div>
-    </main>
-
-    <div class="modal">
-      <div class="modal-backdrop"></div>
-      <span class="span">&times;</span>
-      <div class="modal-content">
-      <img class="modal-img" src="" alt="Image Modal">
-        <p class="description" ></p>
-        <span class="close"></span>
-      </div>
+      <footer>
+        <p>Made by <a href="https://github.com/TheEugeniaKim" >@TheEugeniaKim on Github</a></p>
+      </footer>
     </div>
-
-    <footer>
-      <p>Made by <a href="https://github.com/TheEugeniaKim" >@TheEugeniaKim on Github</a></p>
-    </footer>
-  </div>
-  <script src="./assets/scripts/bundle.js"></script>
-</body>
+    <script src="./assets/scripts/bundle.js"></script>
+  </body>
 </html>
